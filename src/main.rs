@@ -22,7 +22,7 @@ fn main() {
             return;
         } else {
             match read_file(&args[1]) {
-                Ok(contents) => println!("The contents of the file:\n{}\n", contents),
+                Ok(contents) => println!("The contents of the file:\n\n{}", contents),
                 Err(e) => println!("Error reading file: {}", e),
             }
         }
