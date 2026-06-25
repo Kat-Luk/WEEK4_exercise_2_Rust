@@ -8,8 +8,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     if args.iter().any(|a| a == "write") {
         if args.len() != 4 {
-            println!("Unexpected number of arguments! Use as follows:");
-            println!("cargo run <name of file> write <content to be written>");
+            println!("Only give three arguments when writing.");
             return;
         } else {
             match write_in_file(&args[1], &args[3]) {
@@ -19,8 +18,7 @@ fn main() {
         }
     } else if args.iter().any(|a| a == "read") {
         if args.len() != 3 {
-            println!("Unexpected number of arguments! Use as follows:");
-            println!("cargo run <name of file> read");
+            println!("More arguments needed if not reading.");
             return;
         } else {
             match read_file(&args[1]) {
